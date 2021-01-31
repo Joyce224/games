@@ -1,0 +1,68 @@
+body{
+    background-color: aquamarine;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 720px;
+    margin: auto;
+}
+
+.card {
+    font-size: 0;
+    margin: 25px;
+    width: 130px;
+    height: 130px;
+    background: linear-gradient(45deg, #22AB93, #19668D);
+    box-sizing: border-box;
+    border: 5px solid white;
+    border-radius: 9px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    user-select: none;  /* определяет может ли пользователь выбрать текст */
+}
+
+.open {
+    animation: open-card 0.2s linear forwards;
+}
+
+.close {
+    animation: close-card 0.2s linear;
+}
+
+@keyframes open-card {
+    0% {
+        font-size: 0;
+        transform: rotateY(180deg);
+        background: linear-gradient(-45deg, #22AB93, #19668D);
+    }
+    50% {
+        font-size: 0;
+    }
+    51% {
+        font-size: 75px;
+    }
+    100% {
+        font-size: 75px;
+        background: white;
+    }
+}
+
+@keyframes close-card {
+    0% {
+        background: white;
+        font-size: 75px;
+    }
+    50% {
+        font-size: 75px;
+    }
+    51% {
+        font-size: 0;
+    }
+    100% {
+        background: linear-gradient(-45deg, #22AB93, #19668D);
+        font-size: 0;
+        transform: rotateY(180deg);
+    }
+}
